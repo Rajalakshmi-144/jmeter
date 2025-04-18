@@ -13,6 +13,17 @@
             <boolProp name="ThreadGroup.scheduler">false</boolProp>
             <stringProp name="ThreadGroup.duration">60</stringProp> <!-- Test duration in seconds -->
             <stringProp name="ThreadGroup.delay">0</stringProp>
+
+            <!-- Add an HTTP Request Sampler -->
+            <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+                    <stringProp name="HTTPSampler.domain">www.example.com</stringProp> <!-- Replace with a valid domain -->
+                    <stringProp name="HTTPSampler.port">80</stringProp>
+                    <stringProp name="HTTPSampler.path">/</stringProp>
+                    <stringProp name="HTTPSampler.method">GET</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree/>
+            </hashTree>
         </ThreadGroup>
     </hashTree>
 </jmeterTestPlan>
